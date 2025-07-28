@@ -1,0 +1,202 @@
+﻿@model ProductionDelayLoggingSystem.Models.ProductionDelayViewModel
+
+@{
+    ViewData["Title"] = "Production Delay Logging";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+    body {
+        background-color: #d9d9d9;
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+    }
+
+    .container-wrapper {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+    }
+
+    .blue-header {
+        background-color: #003366;
+        color: white;
+        padding: 8px;
+        font-weight: bold;
+        font-size: 16px;
+    }
+
+    .form-row {
+        display: flex;
+        align-items: center;
+        padding: 4px 8px;
+        background-color: #d9d9d9;
+    }
+
+        .form-row label {
+            margin-right: 8px;
+            white-space: nowrap;
+            font-size: 14px;
+        }
+
+        .form-row input, .form-row select {
+            margin-right: 12px;
+            height: 24px;
+            font-size: 14px;
+        }
+
+            .form-row input[type="date"], .form-row input[type="time"] {
+                min-width: 130px;
+            }
+
+    .btn-blue {
+        background-color: #003366;
+        color: white;
+        font-weight: bold;
+        border: 2px solid yellow;
+        padding: 4px 12px;
+        margin-left: 6px;
+    }
+
+    .table-section {
+        margin-top: 6px;
+        background-color: #ccc;
+        padding: 2px;
+    }
+
+    .delay-table {
+        width: 100%;
+        border-collapse: collapse;
+        background-color: #e0e0e0;
+    }
+
+        .delay-table th {
+            background-color: #996633;
+            color: white;
+            padding: 6px;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        .delay-table td {
+            text-align: center;
+            padding: 4px;
+            font-size: 14px;
+        }
+
+        .delay-table tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+    .highlight-row {
+        background-color: #0066cc !important;
+        color: white;
+    }
+
+    .section-split {
+        border-top: 2px solid green;
+        padding-top: 6px;
+        background-color: #d9d9d9;
+    }
+
+    .button-group {
+        text-align: center;
+        margin-top: 8px;
+    }
+
+        .button-group button {
+            margin: 0 6px;
+            padding: 4px 14px;
+            font-size: 14px;
+            font-weight: bold;
+            background-color: #003366;
+            color: white;
+            border: 2px solid yellow;
+        }
+</style>
+
+<div class="container-wrapper">
+    <div class="blue-header">Production Delay Logging</div>
+
+    <div class="form-row">
+        <input type="radio" checked /> <label>View Delay Data Shift wise</label>
+        <label>Shift</label>
+        <select><option>A</option><option>B</option><option>C</option></select>
+        <input type="date" />
+        <button class="btn-blue">VIEW</button>
+
+        <input type="radio" style="margin-left: 20px;" /> <label>View Delay History</label>
+        <label>From Date</label>
+        <input type="date" />
+        <label>To Date</label>
+        <input type="date" />
+        <button class="btn-blue">VIEW</button>
+    </div>
+
+    <div class="table-section">
+        <table class="delay-table">
+            <thead>
+                <tr>
+                    <th>Shift</th>
+                    <th>Delay Start Time</th>
+                    <th>Delay Stop time</th>
+                    <th>DELAY ID</th>
+                    <th>Reason Code</th>
+                    <th>Operator ID</th>
+                    <th>Remarks</th>
+                    <th>DELAY_DURATION</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="highlight-row">
+                    <td>C</td>
+                    <td>7/21/2025 10:01 PM</td>
+                    <td>7/22/2025 1:50 AM</td>
+                    <td>2603</td>
+                    <td></td>
+                    <td>E</td>
+                    <td></td>
+                    <td>230</td>
+                </tr>
+                <tr>
+                    <td colspan="8">&nbsp;</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="section-split">
+        <div class="form-row">
+            <label>Select Agency</label>
+            <select><option>PLANNED SHUTDOWN</option></select>
+            <button class="btn-blue">Split Delays</button>
+        </div>
+
+        <div class="form-row">
+            <label>Reason Code</label>
+            <select></select>
+            <label>Delay Start Time</label>
+            <input type="datetime-local" />
+            <label>Delay Stop Time</label>
+            <input type="datetime-local" />
+            <label>Reason Description</label>
+            <input type="text" />
+        </div>
+
+        <div class="form-row">
+            <label>Operator Id</label>
+            <input type="text" />
+            <label>Duration (in Min)</label>
+            <input type="text" />
+            <label>Remarks</label>
+            <input type="text" value="E" />
+        </div>
+
+        <div class="button-group">
+            <button>UPDATE</button>
+            <button>CANCEL</button>
+            <button>TRANSFER MES</button>
+        </div>
+    </div>
+</div>
