@@ -22,6 +22,6 @@ A web-based Production Delay Logging System built using **ASP.NET Core MVC**, re
 
 ## Screenshot
 
-![UI Screenshot]([./Screenshots/production-delay-log-ui.png](https://github.com/Bibhavxx/Delay-Page/blob/main/Screenshot%202025-07-28%20174642.png))
+<img width="1905" height="914" alt="image" src="https://github.com/user-attachments/assets/becffdea-2ae5-4b7b-8715-af03200822a8" />
 
 
