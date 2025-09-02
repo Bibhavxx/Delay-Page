@@ -17,8 +17,7 @@ A web-based Production Delay Logging System built using **ASP.NET Core MVC**, re
   - Blue headers, buttons with yellow borders
   - Gray grid background, brown table headers
   - No white outer box — true WinForms layout mimic
-
----
+  - And Making Some Atrractive Look Or UI Design etc.
 
 ## Screenshot
 
